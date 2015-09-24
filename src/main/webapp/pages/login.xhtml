@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" 
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:p="http://primefaces.org/ui">
+
+	<h:head>
+		<link type="text/css" rel="stylesheet" href="themes/bluesky/skin.css" />
+	</h:head>
+	
+	<h:body>
+		<h:form>
+			<p:commandButton id="signInBtn" value="Sign in" type="button" />
+		    <p:overlayPanel id="loginPanel" for="signInBtn" hideEffect="fade" dynamic="true" style="width:600px">
+				<h:panelGrid columns="2" cellpadding="5">
+					<h:outputText value="User: " />
+					<p:inputText id="user" value="#{loginMB.user}" />
+					
+					<h:outputText value="Contraseña: " />
+					<p:password id="password" value="#{loginMB.password}" />
+				</h:panelGrid>
+				<h:commandButton value="Ingresar" action="#{loginMB.save}"></h:commandButton>
+			</p:overlayPanel>
+		</h:form>
+	</h:body>
+
+</html>
